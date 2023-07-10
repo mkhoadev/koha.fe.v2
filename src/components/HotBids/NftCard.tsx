@@ -10,6 +10,7 @@ function NftCard({ image }: NftsCardProps) {
   return (
     <div className="card__wrap">
       <div className="card--top">
+        <p className="auction">12:00:00</p>
         <p>
           999 <HealthyIcon />
         </p>

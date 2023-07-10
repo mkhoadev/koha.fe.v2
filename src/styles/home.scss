@@ -80,7 +80,7 @@
           font-family: inherit;
           color: #ffffff;
           border-radius: 12px;
-          border: 3px solid var(--colors-cyan-500, #06b6d4);
+          border: 2px solid var(--colors-cyan-500, #06b6d4);
           background: rgba(22, 26, 66, 0.7);
           backdrop-filter: blur(5px);
         }
@@ -169,11 +169,19 @@
     height: 50px;
     position: relative;
 
+    .auction {
+      position: absolute;
+      left: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     & > p {
       display: flex;
       align-items: center;
       gap: 5px;
       margin-top: 10px;
+      font-size: 14px;
 
       & > svg {
         cursor: pointer;
@@ -200,5 +208,15 @@
     object-fit: cover;
     border-radius: 10px;
     overflow: hidden;
+  }
+
+  .card--price {
+    & > p:first-child {
+      font-weight: 800;
+      font-size: 16px;
+      background: -webkit-linear-gradient(right, #acb6e5 0%, #86fce5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
