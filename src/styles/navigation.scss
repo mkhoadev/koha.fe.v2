@@ -1,0 +1,53 @@
+.navigation__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  padding: 32px 0;
+  width: 72px;
+  border-radius: 16px;
+  background: linear-gradient(179deg, #161a42 0%, rgba(22, 26, 66, 0) 100%);
+
+  & > img {
+    border-radius: 10px;
+  }
+
+  .navigation-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+
+    .navigation-item {
+      display: grid;
+      place-content: center;
+      width: 100%;
+      height: 45px;
+      border-radius: 6px;
+      transition: all 0.2s linear;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background: #232966;
+      }
+
+      &.bar-active {
+        background: #232966;
+
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          top: -2.5px;
+          right: 0;
+          width: 4px;
+          height: 50px;
+          border-radius: 20px;
+          background: linear-gradient(90deg, #ec008c 0%, #fc6767 100%);
+        }
+      }
+    }
+  }
+}
