@@ -14,13 +14,13 @@ function Header() {
       <div className="header__right">
         <button className="create">Create</button>
         <button className="connect-wallet">Connect Wallet</button>
-        <div className="user">
+        {/* <div className="user">
           <Image src="/images/avatar.png" alt="" width={56} height={56} />
           <div className="user-info">
             <p>David Dao</p>
             <p>0x4f5...D28A</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

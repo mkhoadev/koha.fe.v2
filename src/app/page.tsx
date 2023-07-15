@@ -6,20 +6,10 @@ import TopSeller from "@/components/TopSeller";
 
 export default function Home() {
   return (
-    <main className="container">
-      <div className="layout-main">
-        <Navigation />
-        <div className="layout-content">
-          <header>
-            <Header />
-          </header>
-          <section>
-            <Popular />
-            <TopSeller />
-            <HotBids />
-          </section>
-        </div>
-      </div>
-    </main>
+    <>
+      <Popular />
+      <TopSeller />
+      <HotBids />
+    </>
   );
 }

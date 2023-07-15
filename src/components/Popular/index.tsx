@@ -6,7 +6,7 @@ function Popular() {
   return (
     <div className="popular__wrap">
       <div className="popular__top">
-        <h1>Popular NFT’s Live Auction</h1>
+        <h2>Popular NFT’s Live Auction</h2>
         <p>
           Show more <ArrowRightIcon />
         </p>

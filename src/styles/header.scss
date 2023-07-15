@@ -39,6 +39,16 @@
         }
       }
     }
+
+    @media screen and (max-width: 768px) {
+      width: fit-content;
+
+      .search-input {
+        & > input {
+          display: none;
+        }
+      }
+    }
   }
 
   .header__right {
