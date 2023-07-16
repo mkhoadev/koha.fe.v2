@@ -1,8 +1,7 @@
+import Layout from "@/components/Layout";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import "../styles/index.scss";
-import Navigation from "@/components/Navigation";
-import Header from "@/components/Header";
+import "./globals.css";
 
 const poppins = Poppins({ weight: ["300", "400", "500", "600", "700"], subsets: ["latin"] });
 
@@ -16,15 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={poppins.className}>
         <main className="container">
-          <div className="layout-main">
-            <Navigation />
-            <div className="layout-content">
-              <header>
-                <Header />
-              </header>
-              <section>{children}</section>
-            </div>
-          </div>
+          <Layout>{children}</Layout>
         </main>
       </body>
     </html>

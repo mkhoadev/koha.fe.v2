@@ -1,0 +1,92 @@
+.card__wrap {
+  width: 100%;
+  max-width: 200px;
+  height: fit-content;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  .card__name {
+    margin-top: 10px;
+  }
+
+  .card__image {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    .card--like {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 6px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 14px;
+      border-radius: 10px;
+      background-color: #0b0d2160;
+
+      & > svg {
+        transition: all 0.3s linear;
+        cursor: pointer;
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card__action {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99;
+      transition: all 0.3s ease-in-out;
+
+      @media screen and (max-width: 768px) {
+        bottom: 10px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      height: 200px;
+    }
+  }
+
+  .card__price {
+    & > p:first-child {
+      font-weight: 800;
+      font-size: 16px;
+      background: -webkit-linear-gradient(right, #acb6e5 0%, #86fce5 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    .card__image {
+      .card__action {
+        bottom: 10px;
+      }
+    }
+  }
+}

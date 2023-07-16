@@ -1,6 +1,7 @@
-import Image from "next/image";
 import React from "react";
 import { HealthyIcon } from "../../../public/svgs";
+import Image from "next/image";
+import { BsCartPlus } from "react-icons/bs";
 
 interface NftsCardProps {
   image: string;
@@ -8,14 +9,17 @@ interface NftsCardProps {
 
 function NftCard({ image }: NftsCardProps) {
   return (
-    <div className="card__wrap--auction">
-      <div className="card__title">
-        <p className="card__title--auction">12:00:00</p>
-        <p>
-          999 <HealthyIcon />
-        </p>
-      </div>
+    <div className="card__wrap">
       <div className="card__image">
+        <p className="card--like">
+          99 <HealthyIcon />
+        </p>
+        <div className="card__action">
+          <button className="btn">Buy Now</button>
+          <button className="btn">
+            <BsCartPlus size={20} color="#FFFFFF" />
+          </button>
+        </div>
         <Image src={image} alt="" width={200} height={200} />
       </div>
       <p className="card__name">Stretch Of Time</p>

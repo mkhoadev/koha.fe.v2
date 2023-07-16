@@ -1,0 +1,104 @@
+.launchpad__wrap {
+  width: 100%;
+
+  .launchpad__form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 15px;
+
+      & > button {
+        max-width: 100%;
+        height: 50px;
+      }
+
+      & > input,
+      & > textarea {
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #ffffff;
+        padding: 0 10px;
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+        background-color: transparent;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+          border: 1px solid #ffffff;
+        }
+      }
+
+      & > textarea {
+        height: 100px;
+        padding: 10px;
+        font-family: inherit;
+      }
+
+      &.collection__upload {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        & > input {
+          display: none;
+        }
+
+        .upload__image {
+          display: grid;
+          place-content: center;
+          width: calc(100% - 100px);
+          height: 100px;
+          border: 1px dashed #ffffff;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+
+        & > img {
+          border-radius: 10px;
+        }
+      }
+
+      &.upload__nft {
+        & > input {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 425px) {
+        font-size: 14px;
+        & > input,
+        & > textarea {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .nfts__upload {
+    margin-top: 25px;
+  }
+
+  .launchpad__action {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto;
+
+    & > button {
+      max-width: 100%;
+      height: 50px;
+    }
+  }
+}

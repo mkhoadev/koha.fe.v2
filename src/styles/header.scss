@@ -58,8 +58,13 @@
     align-items: center;
     gap: 16px;
 
-    .create {
-      width: 96px;
+    & > a {
+      width: fit-content;
+    }
+
+    .launchpad {
+      padding: 0 15px;
+      width: fit-content;
       height: 56px;
       font-size: 16px;
       color: #ffffff;

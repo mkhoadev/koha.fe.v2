@@ -1,12 +1,7 @@
-import React from "react";
+import NftsPage from "@/views/nfts";
 
 function page() {
-  return (
-    <div className="nfts__wrap">
-      <div className="nfts__filter"></div>
-      <div className="nfts__list"></div>
-    </div>
-  );
+  return <NftsPage />;
 }
 
 export default page;
