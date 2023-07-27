@@ -1,5 +1,7 @@
 "use client";
 
+import configAxios from "@/global/axiosConfig";
+import { jwtManager } from "@/global/jwtManager";
 import { routes } from "@/routes";
 import { disconnectWallet } from "@/store/features/wallet/walletSlice";
 import Image from "next/image";
@@ -11,9 +13,12 @@ import { useDispatch, useSelector } from "react-redux";
 function Navigation() {
   const pathname = usePathname();
   const dispatch = useDispatch();
-  const { address } = useSelector((state: any) => state.wallet);
+  const { user } = useSelector((state: any) => state.wallet);
 
   const disconnect = async () => {
+    window.localStorage.clear();
+    jwtManager?.clear();
+    configAxios();
     dispatch(disconnectWallet());
   };
 
@@ -30,7 +35,7 @@ function Navigation() {
             </div>
           </Link>
         ))}
-        {address && (
+        {Object.keys(user).length > 0 && (
           <div className="navigation-item" onClick={disconnect}>
             <BiLogOut size={24} color="#6ad2ebff" />
           </div>

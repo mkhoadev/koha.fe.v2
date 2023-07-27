@@ -1,0 +1,132 @@
+.mint__wrap {
+  width: 100%;
+
+  .background {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+  }
+
+  .moon {
+    width: 400px;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+  }
+
+  .earth {
+    width: 100px;
+    position: absolute;
+    top: 200px;
+    right: 25%;
+    z-index: -2;
+  }
+
+  .castle {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  .mint__content {
+    width: 100%;
+    max-width: 500px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    margin-top: -10px;
+    border-radius: 10px;
+    background-color: #12062a95;
+    z-index: 1;
+
+    & > button {
+      display: block;
+      margin-top: 20px;
+      max-width: 100%;
+      height: 45px;
+    }
+
+    & > h1 {
+      position: absolute;
+      top: -125px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      font-size: 90px;
+      opacity: 0.9;
+      z-index: -1;
+      font-family: inherit;
+    }
+
+    &--body {
+      display: flex;
+      gap: 10px;
+
+      & > img {
+        border-radius: 10px;
+      }
+
+      & > div {
+        width: 100%;
+
+        & > p {
+          font-size: 18px;
+        }
+
+        & > input {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border-radius: 10px;
+          border: none;
+          font-size: 16px;
+          background: #161a42;
+          outline: none;
+          color: #ffffff;
+          font-family: inherit;
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 95%;
+
+      & > h1 {
+        font-size: 50px;
+        top: -100px;
+      }
+
+      &--body {
+        & > img {
+          width: 150px;
+          height: 150px;
+        }
+
+        & > div {
+          & > p,
+          & > input {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

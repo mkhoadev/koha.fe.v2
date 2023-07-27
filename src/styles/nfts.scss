@@ -64,10 +64,18 @@
       @media screen and (max-width: 768px) {
         bottom: 10px;
       }
+      @media screen and (max-width: 425px) {
+        & > button {
+          font-size: 12px;
+        }
+      }
     }
 
+    @media screen and (max-width: 423px) {
+      height: 180px;
+    }
     @media screen and (max-width: 375px) {
-      height: 200px;
+      height: 160px;
     }
   }
 

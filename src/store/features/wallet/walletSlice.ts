@@ -16,9 +16,11 @@ export const walletSlice = createSlice({
   reducers: {
     connectWallet: (state, action) => {
       state.address = action.payload.address;
+      state.user = action.payload.user;
     },
     disconnectWallet: (state) => {
       state.address = "";
+      state.user = {};
     },
   },
 });

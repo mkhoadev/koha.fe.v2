@@ -1,7 +1,8 @@
+import Collections from "@/views/collections";
 import React from "react";
 
-function page() {
-  return <div>khoa</div>;
+function CollectionsPage() {
+  return <Collections />;
 }
 
-export default page;
+export default CollectionsPage;

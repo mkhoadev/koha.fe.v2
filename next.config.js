@@ -7,6 +7,16 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "coolio.myfilebase.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

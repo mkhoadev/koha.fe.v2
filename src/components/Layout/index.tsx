@@ -1,15 +1,17 @@
 "use client";
 
-import ProviderStore from "@/store/ProviderStore";
+import configAxios from "@/global/axiosConfig";
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./Header";
 import Navigation from "./Navigation";
 
+configAxios();
+
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <ProviderStore>
+    <>
       <div className="layout-main">
         <Navigation />
         <div className="layout-content">
@@ -20,7 +22,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
       <ToastContainer />
-    </ProviderStore>
+    </>
   );
 }
 

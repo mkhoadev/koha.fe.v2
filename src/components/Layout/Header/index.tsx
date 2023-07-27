@@ -7,18 +7,21 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
+import userAPI from "@/apis/userAPI";
+import { jwtManager } from "@/global/jwtManager";
+import configAxios from "@/global/axiosConfig";
 
 function Header() {
   const dispatch = useDispatch();
-  const { address } = useSelector((state: any) => state.wallet);
+  const { address, user } = useSelector((state: any) => state.wallet);
 
   useEffect(() => {
-    window.ethereum.on("accountsChanged", (accounts: any) => {
+    window?.ethereum?.on("accountsChanged", (accounts: any) => {
       if (accounts.length > 1) {
         dispatch(disconnectWallet());
       }
     });
-  }, []);
+  }, [user]);
 
   const connect = async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -26,18 +29,18 @@ function Header() {
         const provider = new ethers.BrowserProvider(window.ethereum);
         await provider.send("eth_requestAccounts", []);
         const signer = await provider.getSigner();
-        signer
-          .signMessage("Welcome to KoHa, the NFT marketplace for the people. 🎉")
-          .then(() => {
-            dispatch(
-              connectWallet({
-                address: signer.address,
-              }),
-            );
-          })
-          .catch((error) => {
-            console.error("Failed to sign the message:", error);
-          });
+        const getNonce = await userAPI.getNonce(signer.address);
+        const sign = await signer.signMessage(getNonce.data);
+        const { data } = await userAPI.getTokenByWalletConnect(signer.address, sign);
+        jwtManager?.set(data.access_token);
+        configAxios();
+        const user = await userAPI.getUserByAddress(signer.address);
+        dispatch(
+          connectWallet({
+            address: signer.address,
+            user: user.data,
+          }),
+        );
       } catch (error) {
         console.error("Error connecting to Wallet:", error);
         dispatch(disconnectWallet());
@@ -60,7 +63,7 @@ function Header() {
         <Link href="/launchpad">
           <button className="launchpad">Launchpad</button>
         </Link>
-        {address ? (
+        {Object.keys(user).length > 0 ? (
           <div className="user">
             <Image src="/images/avatar.png" alt="" width={56} height={56} />
             <div className="user-info">

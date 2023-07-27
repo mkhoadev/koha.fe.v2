@@ -44,6 +44,22 @@ function Popular() {
           </div>
           <Image src="/images/5.png" alt="" width={650} height={305} />
         </div>
+        <div className="popular__content--item">
+          <div className="info">
+            <div className="info--item">
+              <div className="count-down">
+                <p>18h : 17m : 29s</p>
+                <p>Time Remaining</p>
+              </div>
+              <div className="price">
+                <p>100 ETH</p>
+                <p>Highest Bid</p>
+              </div>
+            </div>
+            <button>Place A Bid</button>
+          </div>
+          <Image src="/images/5.png" alt="" width={650} height={305} />
+        </div>
       </div>
     </div>
   );

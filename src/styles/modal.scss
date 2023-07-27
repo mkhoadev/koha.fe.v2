@@ -1,0 +1,78 @@
+.modal__wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #00000090;
+  z-index: 98;
+  transition: all 0.2s linear;
+
+  .modal__backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+  }
+
+  .modal__content {
+    min-width: 350px;
+    min-height: 200px;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background-color: #0d102c;
+    z-index: 99;
+  }
+
+  &.modal--open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// Create Launchpad
+.create__modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .modal--collection {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    & > img {
+      border-radius: 10px;
+    }
+  }
+
+  .modal--item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & > div {
+      width: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    & > p {
+      font-size: 16px;
+    }
+  }
+
+  & > button {
+    display: block;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+}

@@ -98,6 +98,28 @@
         }
       }
     }
+
+    @media screen and (max-width: 425px) {
+      .launchpad {
+        display: none;
+        font-size: 14px;
+      }
+      .user {
+        & > img {
+          width: 50px;
+          height: 50px;
+        }
+        .user-info {
+          & > p,
+          & > p:last-child {
+            font-size: 12px;
+          }
+        }
+      }
+      & > button {
+        font-size: 14px;
+      }
+    }
   }
 }
 
