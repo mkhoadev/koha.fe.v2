@@ -17,6 +17,7 @@ const nextConfig = {
       },
     ],
   },
+  transpilePackages: ["@esotericsoftware/spine-threejs"],
 };
 
 module.exports = nextConfig;
