@@ -106,6 +106,8 @@ function LaunchpadPage() {
         collection.symbol,
         collection.description,
       );
+      console.log("metadataHash: ", metadataHash);
+
       if (fileUpload?.length > 0) {
         image = await uploadSingleFile(fileUpload, collection.symbol);
       }

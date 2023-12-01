@@ -72,7 +72,7 @@ export const uploadMultiFile = async (
     },
   });
 
-  return { metadataHash: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/${resMeta.data.IpfsHash}` };
+  return { metadataHash: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/${resMeta.data.IpfsHash}/` };
 };
 
 export const uploadSingleFile = async (file: any, symbol: string) => {

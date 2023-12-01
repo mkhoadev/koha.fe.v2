@@ -8,11 +8,14 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Launchpad from "../../contracts/ERC721Launchpad/ERC721Launchpad.json";
 import { ethers } from "ethers";
+import nftAPI from "@/apis/nftAPI";
+import { toast } from "react-toastify";
 
 function Mint() {
   const { user } = useSelector((state: any) => state.wallet);
   const [collection, setCollection] = useState<any>({});
   const { id } = useParams();
+  const [mintCount, setMintCount] = useState<string>("");
 
   useEffect(() => {
     if (!id) return;
@@ -30,12 +33,20 @@ function Mint() {
 
   const mint = async () => {
     try {
+      if (!mintCount) return;
       const provider = new ethers.BrowserProvider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
       const contract = getContract(collection.contractAddress, Launchpad.abi, signer);
-      await contract.bulkMintTo(user.address, 1, { value: ethers.parseEther("0") });
-      console.log(contract);
+      const tx = await contract.bulkMintTo(user.address, +mintCount, {
+        value: ethers.parseEther(collection.mintFee.toString()),
+      });
+      await tx.wait();
+      if (tx.hash) {
+        await nftAPI.create(tx?.hash);
+      }
+      setMintCount("");
+      toast.success("Mint nft success");
     } catch (error) {
       console.log(error);
     }
@@ -66,7 +77,12 @@ function Mint() {
             <p>Minted: {collection?.minted}</p>
             <p>Limit: {collection?.limit}</p>
             <p>User limit: {collection?.userLimit}</p>
-            <input type="number" placeholder="Quantity mint" />
+            <input
+              type="number"
+              placeholder="Quantity mint"
+              value={mintCount}
+              onChange={(e) => setMintCount(e.target.value)}
+            />
           </div>
         </div>
         <button className="btn" onClick={mint}>
