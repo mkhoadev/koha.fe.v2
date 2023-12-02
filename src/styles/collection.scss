@@ -1,15 +1,22 @@
-.collections__wrap {
-  width: 100%;
+.collections__grid {
   display: grid;
-  grid-template-columns: repeat(200, minmax(200px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
 
   @media screen and (max-width: 450px) {
-    grid-template-columns: repeat(150, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .collection__card {
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     padding: 10px;
+    background-color: #141414;
+    border: 2px solid transparent;
+    border-radius: 12px;
     border-radius: 10px;
     transition: 0.2s linear;
 
@@ -18,8 +25,13 @@
       border-radius: 10px;
     }
 
+    & > p {
+      margin-top: 5px;
+    }
+
     &:hover {
-      background-color: #0d1027;
+      border: 2px solid #222222;
+      transform: translateY(-5px);
     }
   }
 }

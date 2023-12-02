@@ -11,13 +11,10 @@ function NftCard({ image }: NftsCardProps) {
   return (
     <div className="card__wrap">
       <div className="card__image">
-        <p className="card--like">
-          99 <HealthyIcon />
-        </p>
         <div className="card__action">
           <button className="btn">Buy Now</button>
           <button className="btn">
-            <BsCartPlus size={20} color="#FFFFFF" />
+            <BsCartPlus size={20} color="#000000" />
           </button>
         </div>
         <Image src={image} alt="" width={200} height={200} />

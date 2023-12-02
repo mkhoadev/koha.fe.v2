@@ -26,9 +26,9 @@
         font-family: inherit;
         font-size: 16px;
         color: #ffffff;
-        border: none;
+        border: 2px solid #8fff00;
         border-radius: 16px;
-        background: linear-gradient(179deg, #161a42 0%, rgba(22, 26, 66, 0) 100%);
+        background-color: transparent;
 
         &:focus {
           outline: none;
@@ -65,14 +65,13 @@
     .launchpad {
       padding: 0 15px;
       width: fit-content;
-      height: 56px;
+      height: 50px;
       font-size: 16px;
-      color: #ffffff;
       border: none;
       font-family: inherit;
-      font-weight: 400;
-      border-radius: 16px;
-      background: linear-gradient(179deg, #161a42 0%, rgba(22, 26, 66, 0) 100%);
+      font-weight: 500;
+      border-radius: 12px;
+      background-color: #8fff00;
     }
 
     .user {
@@ -127,29 +126,10 @@
   width: 170px;
   height: 50px;
   font-size: 16px;
-  color: #ffffff;
   border: none;
   font-family: inherit;
-  font-weight: 400;
+  font-weight: 500;
   border-radius: 12px;
-  background: #161a42;
+  background-color: #8fff00;
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    z-index: -1;
-    width: 174px;
-    height: 54px;
-    border-radius: 13px;
-    background: linear-gradient(
-      90deg,
-      rgba(31, 162, 255, 1) 0%,
-      rgba(18, 216, 250, 1) 50%,
-      rgba(166, 255, 203, 1) 100%
-    );
-    box-shadow: 0px 13px 17px 0px rgba(140, 213, 105, 0.2);
-  }
 }

@@ -22,7 +22,7 @@ function Collections() {
   };
 
   return (
-    <div className="collections__wrap">
+    <div className="collections__grid">
       {collections?.map((item: any, idx: number) => (
         <Link key={idx} href={`/collections/${item?._id}`}>
           <CollectionCard data={item} />

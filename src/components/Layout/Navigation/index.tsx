@@ -31,13 +31,13 @@ function Navigation() {
         {routes.map((route: any, index: number) => (
           <Link key={index} href={route?.path || "#"}>
             <div className={`navigation-item ${route?.path === pathname ? "bar-active" : ""}`}>
-              {<route.icon size={24} color="#6ad2ebff" />}
+              {<route.icon size={24} color={route?.path === pathname ? "#8FFF00" : "#393939"} />}
             </div>
           </Link>
         ))}
         {Object.keys(user).length > 0 && (
           <div className="navigation-item" onClick={disconnect}>
-            <BiLogOut size={24} color="#6ad2ebff" />
+            <BiLogOut size={24} color="#393939" />
           </div>
         )}
       </div>

@@ -1,12 +1,14 @@
 .navigation__wrap {
   width: 70px;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 42px;
   padding: 32px 0;
+  border: 2px solid #222222;
   border-radius: 16px;
-  background: linear-gradient(179deg, #161a42 0%, rgba(22, 26, 66, 0) 100%);
+  background-color: #000000;
 
   img {
     display: block;
@@ -31,12 +33,10 @@
       cursor: pointer;
 
       &:hover {
-        background: #232966;
+        background: #000000;
       }
 
       &.bar-active {
-        background: #232966;
-
         &::after {
           content: "";
           position: absolute;
@@ -46,7 +46,7 @@
           width: 4px;
           height: 50px;
           border-radius: 20px;
-          background: linear-gradient(90deg, #ec008c 0%, #fc6767 100%);
+          background-color: #8fff00;
         }
       }
     }
